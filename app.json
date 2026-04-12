@@ -19,14 +19,14 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.johnkristan01.cotsgeovisionapp"
     },
     "web": {
       "output": "static",
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
-      "react-native-executorch",
       "expo-router",
       [
         "expo-splash-screen",
@@ -44,6 +44,12 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "37d34ff3-77c0-42ec-b3a4-68011b0ff5a0"
+      }
     }
   }
 }
