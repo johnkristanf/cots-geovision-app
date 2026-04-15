@@ -8,9 +8,6 @@ export default function FloatingControls() {
             <TouchableOpacity className="w-12 h-12 rounded-full bg-black/30 items-center justify-center">
                 <MaterialIcons name="flash-on" size={24} color="#FFF" />
             </TouchableOpacity>
-            <TouchableOpacity className="w-12 h-12 rounded-full bg-black/30 items-center justify-center">
-                <MaterialIcons name="flip-camera-ios" size={24} color="#FFF" />
-            </TouchableOpacity>
             <TouchableOpacity className="w-12 h-12 rounded-full bg-black/30 items-center justify-center flex-col">
                 <Text className="text-white text-[10px] font-bold">1.5x</Text>
                 <MaterialIcons name="zoom-in" size={20} color="#FFF" />
