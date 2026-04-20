@@ -5,12 +5,14 @@ import { Camera, useCameraDevice, useCameraPermission } from 'react-native-visio
 import BottomCaptureBar from '@/components/detection/bottom-capture-bar';
 import FloatingControls from '@/components/detection/floating-controls';
 import AppHeader from '@/components/shared/app-header';
+import Sidebar from '@/components/shared/sidebar';
 
 export default function DetectionScreen() {
   const { hasPermission, requestPermission } = useCameraPermission();
   const [cameraPosition, setCameraPosition] = useState<'back' | 'front'>('back');
   const [isRecording, setIsRecording] = useState(false);
   const [lastVideoUri, setLastVideoUri] = useState<string | null>(null);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const device = useCameraDevice(cameraPosition);
   const cameraRef = useRef<Camera>(null);
@@ -72,10 +74,11 @@ export default function DetectionScreen() {
         device={device}
         isActive={true}
         video={true}
-        audio={true}
+        audio={false}
       />
 
-      <AppHeader />
+      <AppHeader onMenuPress={() => setIsSidebarOpen(true)} />
+      <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
       <FloatingControls />
       <BottomCaptureBar
         isRecording={isRecording}
@@ -87,3 +90,4 @@ export default function DetectionScreen() {
     </View>
   );
 }
+  
